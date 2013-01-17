@@ -1,0 +1,17 @@
+body,html {
+    min-height:100%;
+    position: relative;
+}
+
+.container.wrapper {
+    padding-bottom: 30px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.footer.container .navbar {
+    margin-bottom: 0;
+}
