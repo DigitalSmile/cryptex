@@ -7,7 +7,6 @@ function NotesController($scope, $location, User) {
     $scope.notesActive = "active";
 
 
-
     generateIdenticons();
 
 }
