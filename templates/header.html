@@ -1,9 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">Crypto notes</a>
+            <ul class="nav">
+                <!--<li ng-class="statActive"><a href="#!/stat">Statistics</a></li>-->
+                <li ng-class="aboutActive"><a href="/about/">About</a></li>
+                <li ng-class="notesActive"><a href="/notes/">Notes</a></li>
+                <li ng-class=""><a href="/">Settings</a></li>
+            </ul>
+            <p class="navbar-text pull-right">[some info]</p>
+        </div>
+    </div>
+</div>
+<div class="page-header">
+    <h1>{{headerTitle}}</h1>
 
-</body>
-</html>
+    <div class="alert {{alertType}} alert-block" ng-show="alertType" alert>
+        <a class="close" href="#">&times;</a>
+        <strong>{{alertHeader}} </strong>
+        Something went wrong... <a id="popover" href="#" data-title="{{alertHeader}}" data-content="{{alertText}}" popover>More info</a>
+    </div>
+</div>

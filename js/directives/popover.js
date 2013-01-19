@@ -1,6 +1,8 @@
-angular.module('dropdownDirective', [])
-    .directive('dropdown', function () {
-        return function (scope, element) {
-            $(element).dropdown();
+angular.module('popoverDirective', [])
+    .directive('popover', function () {
+        return function (scope, element, attrs) {
+            $(element).popover({
+                placement: 'bottom'
+            });
         }
     });
