@@ -2,10 +2,12 @@ angular.module('Main',
     [
         'alertDirective',
         'popoverDirective',
+        'identiconsDirective',
+        'popupDirective',
 
 
-
-        'userService'
+        'userService',
+        'popupCloseManager'
     ],
     function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
