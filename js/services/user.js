@@ -1,16 +1,23 @@
 angular
     .module('userService', [])
-    .factory('User', function () {
+    .factory('UserManager', function () {
 
         var user = {
-            email: '',
+            email:'',
+            keep:false,
 
-            addEmail: function(email) {
+            login:function (email) {
                 this.email = email;
             },
-            checkUser: function() {
+            isLoggedIn:function () {
                 return this.email != '';
+            },
+            setIsKeeped:function (keep) {
+                this.keep = keep;
+            },
+            isKeeped:function () {
+                return this.keep;
             }
         }
         return user;
-});
+    });

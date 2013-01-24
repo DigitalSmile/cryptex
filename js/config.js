@@ -7,6 +7,7 @@ angular.module('Main',
 
 
         'userService',
+        'requestBuilderService',
         'popupCloseManager'
     ],
     function ($routeProvider, $locationProvider) {

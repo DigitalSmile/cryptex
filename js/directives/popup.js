@@ -28,7 +28,7 @@ angular.module('popupDirective', [])
                 var body = $compile('<div ng-include="\'' + attrs.popup + '\'"></div>')(popupScope);
 
                 var dialog = $(body).dialog({
-                    width: (attrs.popupwidth ? attrs.popupwidth : 380),
+                    width: (attrs.popupwidth ? attrs.popupwidth : 450),
                     modal:true,
                     resizable:false,
                     position:{ my:"center", at:"center"},

@@ -1,3 +1,19 @@
 <div>
-    decrypt
+    <form>
+        <div class="control-group">
+            <label class="control-label" for="credentials">Enter key or secret phrase to decrypt the item</label>
+            <div class="controls">
+                <input class="input-block-level" type="text" id="credentials" placeholder="Key or secret phrase" ng-model="pass">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"> Keep unlocked during session
+                </label>
+                <button class="btn btn-primary" ng-click="data.getNote(pass)">Let's do it!</button>
+            </div>
+        </div>
+    </form>
 </div>
+<script type="text/javascript" src="/lib/cryptojs/alg/aes.js"></script>
