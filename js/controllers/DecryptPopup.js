@@ -1,3 +1,0 @@
-function DecryptPopupController($scope) {
-
-}

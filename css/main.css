@@ -25,3 +25,7 @@ body,html {
 .footer.container .navbar {
     margin-bottom: 0;
 }
+
+.alert .ui-dialog-titlebar {
+    display:none;
+}

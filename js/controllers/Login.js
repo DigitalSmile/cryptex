@@ -14,10 +14,17 @@ function LoginController($scope, $route, $location, UserManager, UserRequestBuil
             if ($scope.user.keep) {
                 UserManager.setIsKeeped(true);
             }
-            UserManager.login($scope.user.email);
+            UserManager.login(hash);
+            $location.search({});
             if (result.id) {
                 // we have that guy
-                $location.path($scope.backUrl);
+                if (result.key) {
+                    //looks like nerd with key
+
+                } else {
+                    //simple auth no key
+                    $location.path($scope.backUrl);
+                }
             } else {
                 //new to us
                 //console.log(data.id);

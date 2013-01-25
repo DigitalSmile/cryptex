@@ -17,6 +17,9 @@ angular
             },
             isKeeped:function () {
                 return this.keep;
+            },
+            getEmail: function() {
+                return this.email;
             }
         }
         return user;

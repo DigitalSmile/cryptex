@@ -2,18 +2,20 @@
     <form>
         <div class="control-group">
             <label class="control-label" for="credentials">Enter key or secret phrase to decrypt the item</label>
+
             <div class="controls">
-                <input class="input-block-level" type="text" id="credentials" placeholder="Key or secret phrase" ng-model="pass">
+                <input class="input-block-level" type="text" id="credentials" placeholder="Key or secret phrase"
+                       ng-model="pass" required>
             </div>
         </div>
         <div class="control-group">
             <div class="controls">
                 <label class="checkbox">
-                    <input type="checkbox"> Keep unlocked during session
+                    <input type="checkbox" ng-model="keep"> Keep unlocked during session
                 </label>
-                <button class="btn btn-primary" ng-click="data.getNote(pass)">Let's do it!</button>
+                <button class="btn btn-primary" ng-click="data.getNote(data.id, pass, keep)" ng-disabled="!pass">Let's do it!</button>
+                <button class="btn" ng-hide="data.showCancel" ng-click="cancel()">Cancel</button>
             </div>
         </div>
     </form>
 </div>
-<script type="text/javascript" src="/lib/cryptojs/alg/aes.js"></script>

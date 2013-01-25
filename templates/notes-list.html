@@ -1,18 +1,27 @@
-<div ng-include="'/templates/header.html'"></div>
-<div class="well well-small form-inline">
-    <input type="text" class="input-medium search-query" placeholder="Type to search">
-</div>
-<ul class="thumbnails">
-    <li class="span3" ng-repeat="note in notes">
-        <div class="thumbnail">
-            <img class="identicon" src="/img/placeholder.png" width="128" height="128"
-                 data-identicon="{{note.id}}" identicon>
-            <div class="caption pagination-centered">
-                <h4>{{note.title}}</h4>
-                <button class="btn btn-mini btn-success" ng-href="/notes/{{note.id}}/" popupid="decrypt" popup="/templates/decrypt.html" show="isDecrypted(note.id)" data="noteProvider"><i class="icon-white icon-lock"></i> Decrypt</button>
-                <!-- <button class="btn btn-mini btn-danger" popupid="remove" popup="/templates/remove.html" show="isDecrypted(note.sha1)" click="remove(note.sha1)"><i class="icon-white icon-remove"></i> Remove</button> -->
-                <button class="btn btn-mini btn-info" popupid="share" popup="/templates/share.html" show="isDecrypted(note.id)" click="share(note.sha1)"><i class="icon-white icon-globe"></i> Share</button>
+<div ng-show="notes[0]" style="display:none;">
+    <div ng-include="'/templates/header.html'"></div>
+    <div class="well well-small form-inline">
+        <input type="text" class="input-medium search-query" placeholder="Type to search">
+    </div>
+    <ul class="thumbnails">
+        <li class="span3" ng-repeat="note in notes">
+            <div class="thumbnail">
+                <img class="identicon" src="/img/placeholder.png" width="128" height="128"
+                     data-identicons="{{note.id}}" identicon>
+
+                <div class="caption pagination-centered">
+                    <h4>{{note.title}}</h4>
+                    <a class="btn btn-mini btn-success" ng-href="/notes/{{note.id}}/" popupid="decrypt"
+                            popup="/templates/decrypt.html" show="isDecrypted(note.id)" data="note"><i
+                            class="icon-white icon-lock"></i> Decrypt
+                    </a>
+                    <!-- <button class="btn btn-mini btn-danger" popupid="remove" popup="/templates/remove.html" show="isDecrypted(note.sha1)" click="remove(note.sha1)"><i class="icon-white icon-remove"></i> Remove</button> -->
+                    <button class="btn btn-mini btn-info" popupid="share" popup="/templates/share.html"
+                            show="isDecrypted(note.id)" click="share(note.sha1)"><i class="icon-white icon-globe"></i>
+                        Share
+                    </button>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </li>
+    </ul>
+</div>

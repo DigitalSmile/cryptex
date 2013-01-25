@@ -10,7 +10,7 @@ angular.module('alertDirective', [])
                 scope.alertText = text;
                 if ($(element).css('display') == 'none')
                     $(element).fadeToggle("fast", "linear");
-                scope.$apply();
+                //scope.$apply();
             });
             $(element).find(".close").on('click', function () {
                 $(element).fadeToggle('slow', 'linear');
